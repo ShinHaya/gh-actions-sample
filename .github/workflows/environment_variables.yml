@@ -1,0 +1,12 @@
+name: Environment variables
+on: push
+jobs: 
+  run:
+    runs-on: ubntu-latest
+    env:
+      BRANCH: main
+    steps:
+      - run: echo "${BRANCH}"
+      - uses: actoins/checkout@v4
+        with:
+          ref: ${{ env.BRANCH}}
